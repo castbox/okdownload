@@ -324,9 +324,12 @@ public class Util {
     }
 
     public static long parseContentLength(@Nullable String contentLength) {
-        if (contentLength == null) return CHUNKED_CONTENT_LENGTH;
-
-        return Long.parseLong(contentLength);
+        if (contentLength == null || contentLength.equals("-")) return CHUNKED_CONTENT_LENGTH;
+        try {
+            return Long.parseLong(contentLength);
+        } catch (Throwable err) {
+            return CHUNKED_CONTENT_LENGTH;
+        }
     }
 
     public static boolean isNetworkNotOnWifiType(ConnectivityManager manager) {
