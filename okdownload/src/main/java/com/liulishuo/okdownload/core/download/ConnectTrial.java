@@ -74,7 +74,7 @@ public class ConnectTrial {
         boolean isNeedTrialHeadMethod;
         try {
             if (!Util.isEmpty(info.getEtag())) {
-                connection.addHeader(IF_MATCH, info.getEtag());
+//                connection.addHeader(IF_MATCH, info.getEtag());
             }
             connection.addHeader(RANGE, "bytes=0-0");
             final Map<String, List<String>> userHeader = task.getHeaderMapFields();

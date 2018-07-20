@@ -72,10 +72,10 @@ public class HeaderInterceptor implements Interceptor.Connect {
                 + blockInfo.getCurrentOffset() + ")");
 
         // add etag if exist
-        final String etag = info.getEtag();
-        if (!Util.isEmpty(etag)) {
-            connection.addHeader(IF_MATCH, etag);
-        }
+//        final String etag = info.getEtag();
+//        if (!Util.isEmpty(etag)) {
+//            connection.addHeader(IF_MATCH, etag);
+//        }
 
         if (chain.getCache().isInterrupt()) {
             throw InterruptException.SIGNAL;

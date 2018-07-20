@@ -315,12 +315,12 @@ public class DownloadStrategy {
             return RESPONSE_PRECONDITION_FAILED;
         }
 
-        if (!Util.isEmpty(localEtag) && !Util.isEmpty(responseEtag) && !responseEtag
-                .equals(localEtag)) {
-            // etag changed.
-            // also etag changed is relate to HTTP_PRECON_FAILED
-            return RESPONSE_ETAG_CHANGED;
-        }
+//        if (!Util.isEmpty(localEtag) && !Util.isEmpty(responseEtag) && !responseEtag
+//                .equals(localEtag)) {
+//            // etag changed.
+//            // also etag changed is relate to HTTP_PRECON_FAILED
+//            return RESPONSE_ETAG_CHANGED;
+//        }
 
         if (responseCode == HttpURLConnection.HTTP_CREATED && isAlreadyProceed) {
             // The request has been fulfilled and has resulted in one or more new resources
