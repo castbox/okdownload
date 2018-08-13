@@ -30,6 +30,3 @@ dependencies {
 
     compileOnly project(':okdownload-core')
 }
-
-//apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
-//apply from: rootProject.file('gradle/codecov.gradle')

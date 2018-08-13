@@ -328,8 +328,9 @@ public class Util {
         try {
             return Long.parseLong(contentLength);
         } catch (Throwable err) {
-            return CHUNKED_CONTENT_LENGTH;
+            Util.d("Util", "parseContentLength failed parse for '" + contentLength + "'");
         }
+        return CHUNKED_CONTENT_LENGTH;
     }
 
     public static boolean isNetworkNotOnWifiType(ConnectivityManager manager) {

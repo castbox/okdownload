@@ -16,6 +16,8 @@
 
 apply plugin: 'jacoco'
 
+println "apply code-coverage"
+
 task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
 
     reports {
@@ -51,6 +53,8 @@ android {
     }
 }
 
-afterEvaluate {
-    tasks.findByName('okcheckDebug').dependsOn('jacocoTestReport')
+project.tasks.whenTaskAdded { task ->
+    if (task.name == "okcheckDebug" || task.name == 'okcheck') {
+        task.dependsOn('jacocoTestReport')
+    }
 }
