@@ -183,7 +183,7 @@ public class BreakpointStoreOnCache implements DownloadStore {
             if (another.compareIgnoreId(task)) return another.getId();
         }
 
-        final int id = allocateId();
+        final int id = KeyToIdMap.generateId(task.getUrl(), task.getFile().getAbsolutePath());
         unStoredTasks.put(id, task.mock(id));
         keyToIdMap.add(task, id);
         return id;
